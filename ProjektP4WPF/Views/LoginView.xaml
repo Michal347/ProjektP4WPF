@@ -29,7 +29,7 @@
 
 
             <StackPanel VerticalAlignment="Center">
-                <Image Source="Icons/Calendar.png" Width="80"/>
+                <Image Source="..\Icons\Calendar.png" Width="80"/>
 
             </StackPanel>
 

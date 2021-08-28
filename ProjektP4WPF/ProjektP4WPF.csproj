@@ -82,10 +82,12 @@
     <Compile Include="DAL\AirportDbContext.cs" />
     <Compile Include="DAL\AirportInitializer.cs" />
     <Compile Include="Models\CityModel.cs" />
+    <Compile Include="Models\FlighDataModel.cs" />
     <Compile Include="Models\ReservationDataModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Util\PasswordHasher.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\FlightViewModel.cs" />
     <Compile Include="ViewModels\IPopupWindow.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

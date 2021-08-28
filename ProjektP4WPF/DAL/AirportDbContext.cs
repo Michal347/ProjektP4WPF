@@ -25,5 +25,6 @@ namespace ProjektP4WPF.DAL
         public DbSet<UserModel> Users { get; set; }
         public DbSet<CityModel> Cities { get; set; }
         public DbSet<ReservationDataModel> Reservations { get; set; }
+        public DbSet<FlighDataModel> Flights { get; set; }
     }
 }

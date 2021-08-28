@@ -12,12 +12,10 @@ namespace ProjektP4WPF.Models
     {
         [Key]
         public int Id { get; set; }
-        public CityModel Departure { get; set; }
-        public CityModel Arrival { get; set; }
+        public int FlightId { get; set; }
         public int SeatNumber { get; set; }
-        public string IdNumber { get; set; }
         public DateTime ReservationDate { get; set; }
         public int ComfortClass { get; set; }
-        public UserModel User { get; set; }
+        public int User { get; set; }
     }
 }

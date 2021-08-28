@@ -29,6 +29,21 @@ namespace ProjektP4WPF.DAL
             cities.ForEach(s => context.Cities.Add(s));
             context.SaveChanges();
 
+
+            var flights = new List<FlighDataModel>
+            {
+                new FlighDataModel() {ArrivalCity = 1, DepartureCity = 2, ArrivalDate = DateTime.Now, DepartureDate = DateTime.Now, Premium = true },
+                new FlighDataModel() {ArrivalCity = 1, DepartureCity = 2, ArrivalDate = DateTime.Now, DepartureDate = DateTime.Now, Premium = true },
+                new FlighDataModel() {ArrivalCity = 1, DepartureCity = 2, ArrivalDate = DateTime.Now, DepartureDate = DateTime.Now, Premium = true },
+                new FlighDataModel() {ArrivalCity = 1, DepartureCity = 2, ArrivalDate = DateTime.Now, DepartureDate = DateTime.Now, Premium = true },
+                new FlighDataModel() {ArrivalCity = 1, DepartureCity = 2, ArrivalDate = DateTime.Now, DepartureDate = DateTime.Now, Premium = true },
+                new FlighDataModel() {ArrivalCity = 1, DepartureCity = 2, ArrivalDate = DateTime.Now, DepartureDate = DateTime.Now, Premium = true },
+                new FlighDataModel() {ArrivalCity = 1, DepartureCity = 2, ArrivalDate = DateTime.Now, DepartureDate = DateTime.Now, Premium = true },
+                new FlighDataModel() {ArrivalCity = 3, DepartureCity = 5, ArrivalDate = DateTime.Now.AddDays(1), DepartureDate = DateTime.Now.AddDays(-1), Premium = true }
+            };
+
+            flights.ForEach(s => context.Flights.Add(s));
+            context.SaveChanges();
         }
     }
 }

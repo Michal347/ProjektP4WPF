@@ -95,7 +95,7 @@ namespace ProjektP4WPF
         {
             //create main window component 
             mainWindow = new MainWindowView();
-            mainWindow.DataContext = new MainViewModel() { PassengerName = e.Name, PassengerSurname = e.Surname };
+            mainWindow.DataContext = new MainViewModel() { UserId = e.Id, PassengerName = e.Name, PassengerSurname = e.Surname };
 
             // dipose login component 
             var lvm = (loginWindow.DataContext as LoginViewModel);
