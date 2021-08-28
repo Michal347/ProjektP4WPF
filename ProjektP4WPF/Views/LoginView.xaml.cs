@@ -20,41 +20,17 @@ namespace ProjektP4WPF.Views
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class LoginView : Window
     {
         public LoginView()
         {
             InitializeComponent();
         }
 
-        //private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    //if (e.LeftButton == MouseButtonState.Pressed)
-        //    //    DragMove();
-        //}
-
-        //private void Loginbutton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //SqlConnection con = new SqlConnection(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Lotniskodb; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
-        //    //SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM Logowanie WHERE Login='" + Loginbox.Text + "' AND Haslo='" + passwordbox.Password + "'", con);
-
-        //    //DataTable dt = new DataTable();
-        //    //sda.Fill(dt);
-        //    //if (dt.Rows[0][0].ToString() == "1")
-        //    //{
-
-        //    //    this.Hide();
-        //    //    new MainWindow().Show();
-        //    //}
-        //    //else
-        //    //    MessageBox.Show("Niepoprawne dane");
-        //}
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //Register reg = new Register();
-        //    //reg.Show();
-        //    //this.Hide();
-        //}
+        private void passwordbox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
+        }
     }
 }

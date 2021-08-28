@@ -84,6 +84,7 @@
     <Compile Include="Models\CityModel.cs" />
     <Compile Include="Models\ReservationDataModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Util\PasswordHasher.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\IPopupWindow.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />

@@ -25,9 +25,6 @@ namespace ProjektP4WPF.Views
     {
         public MainWindowView()
         {
-
-            var viewModel = new MainViewModel();
-            DataContext = viewModel;
             InitializeComponent();
         }
      

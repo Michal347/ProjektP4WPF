@@ -18,11 +18,17 @@ namespace ProjektP4WPF.Views
     /// <summary>
     /// Interaction logic for RegisterView.xaml
     /// </summary>
-    public partial class RegisterView : UserControl
+    public partial class RegisterView : Window
     {
         public RegisterView()
         {
             InitializeComponent();
+        }
+
+        private void regpasswordbos_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
         }
     }
 }

@@ -1,20 +1,23 @@
-﻿<UserControl x:Class="ProjektP4WPF.Views.RegisterView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ProjektP4WPF.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="380">
+﻿<Window x:Class="ProjektP4WPF.Views.RegisterView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektP4WPF"
+        mc:Ignorable="d"
+        Title="Register" Height="450" Width="380"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
     <Grid>
-        <Grid RenderTransformOrigin="0.502,0.563">
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
 
-            <Border CornerRadius="10" Grid.RowSpan="2" RenderTransformOrigin="0.511,0.533">
+            <Border  Grid.RowSpan="2" >
                 <Border.Background>
                     <LinearGradientBrush>
                         <GradientStop Color="#05b4ff" Offset="0.0"/>
@@ -22,102 +25,143 @@
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
-            <StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="RegLoginbox" FontFamily="Helvetica"
-                             FontWeight="Light"
-                             Text="Login"
-                             FontSize="20"
-                             HorizontalAlignment="Center"
-                             Foreground="White"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             Width="235"
-                             HorizontalContentAlignment="Left"
-                             Opacity="0.5"
-                             Height="25"
-                             Margin="63,60,0,0"/>
 
-                </StackPanel>
-                <Border Width="250"
+            <StackPanel Orientation="Vertical" Grid.Row="0" >
+                <StackPanel Orientation="Vertical" Margin="0,10,0,10">
+                    <TextBlock FontFamily="Helvetica"
+                                FontWeight="Light"
+                                Text="Login"
+                                FontSize="15"
+                                HorizontalAlignment="Center"
+                                Foreground="White"
+                                Background="Transparent"
+                                Width="235"
+                                Height="20"
+                                Opacity="0.5"
+                                TextAlignment="Right"
+                                IsHitTestVisible="False"/>
+                    <TextBox x:Name="RegLoginbox" FontFamily="Helvetica"
+                                FontWeight="Light"
+                                TextAlignment="Center"
+                                Text="{Binding Login, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, Mode=TwoWay}"
+                                FontSize="20"
+                                HorizontalAlignment="Center"
+                                Foreground="White"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Width="235"
+                                HorizontalContentAlignment="Center"
+                                Height="25"/>
+                    <Border Width="250"
                         Height="2"
                         Background="White"
                         Opacity="0.5"/>
-            </StackPanel>
-            <StackPanel>
-                <StackPanel Orientation="Horizontal">
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0,10,0,10">
+                <TextBlock FontFamily="Helvetica"
+                                FontWeight="Light"
+                                Text="Password"
+                                FontSize="15"
+                                HorizontalAlignment="Center"
+                                Foreground="White"
+                                Background="Transparent"
+                                Width="235"
+                                Height="20"
+                                Opacity="0.5"
+                                TextAlignment="Right"
+                                IsHitTestVisible="False"/>
                     <PasswordBox x:Name="regpasswordbos" FontFamily="Helvetica"
                              FontWeight="Light"
-                             Password="password"
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="White"
                              Background="Transparent"
                              BorderThickness="0"
                              Width="235"
-                             HorizontalContentAlignment="Left"
-                             Opacity="0.5"
+                             HorizontalContentAlignment="Center"
                              Height="25"
-                             Margin="63,100,0,0"/>
+                             PasswordChanged="regpasswordbos_PasswordChanged"/>
 
-                </StackPanel>
-                <Border Width="250"
+                    <Border Width="250"
                         Height="2"
                         Background="White"
                         Opacity="0.5"/>
             </StackPanel>
 
-            <StackPanel>
-                <StackPanel Orientation="Horizontal">
+
+                <StackPanel Orientation="Vertical" Margin="0,10,0,10">
+                    <TextBlock FontFamily="Helvetica"
+                        FontWeight="Light"
+                        Text="Name"
+                        FontSize="15"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        Background="Transparent"
+                        Width="235"
+                        Height="20"
+                        Opacity="0.5"
+                        TextAlignment="Right"
+                        IsHitTestVisible="False"/>
                     <TextBox x:Name="regImiębox" FontFamily="Helvetica"
-                             FontWeight="Light"
-                             Text="Imię"
-                             FontSize="20"
-                             HorizontalAlignment="Center"
-                             Foreground="White"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             Width="235"
-                             HorizontalContentAlignment="Left"
-                             Opacity="0.5"
-                             Height="25"
-                             Margin="63,140,0,0"/>
-
-                </StackPanel>
-                <Border Width="250"
+                            FontWeight="Light"
+                            Text="{Binding Name}"
+                            FontSize="20"
+                            HorizontalAlignment="Center"
+                            Foreground="White"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            TextAlignment="Center"
+                            Width="235"
+                            HorizontalContentAlignment="Left"
+                            Height="25"/>
+                    <Border Width="250"
                         Height="2"
                         Background="White"
                         Opacity="0.5"/>
-            </StackPanel>
+                </StackPanel>
 
-            <StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="0,10,0,10">
+
+                    <TextBlock FontFamily="Helvetica"
+                        FontWeight="Light"
+                        Text="Surname"
+                        FontSize="15"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        Background="Transparent"
+                        Width="235"
+                        Height="20"
+                        Opacity="0.5"
+                        TextAlignment="Right"
+                        IsHitTestVisible="False"/>
                     <TextBox x:Name="Regnazwiskobox" FontFamily="Helvetica"
-                             FontWeight="Light"
-                             Text="Nazwisko"
-                             FontSize="20"
-                             HorizontalAlignment="Center"
-                             Foreground="White"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             Width="235"
-                             HorizontalContentAlignment="Left"
-                             Opacity="0.5"
-                             Height="25"
-                             Margin="63,180,0,0"/>
-
-                </StackPanel>
-                <Border Width="250"
+                        FontWeight="Light"
+                        Text="{Binding Surname}"
+                        FontSize="20"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        Background="Transparent"
+                        TextAlignment="Center"
+                        BorderThickness="0"
+                        Width="235"
+                        HorizontalContentAlignment="Left"
+                        Height="25"/>
+                    <Border Width="250"
                         Height="2"
                         Background="White"
                         Opacity="0.5"/>
+                </StackPanel>
+
             </StackPanel>
 
-
+            <Grid Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Cofnij" Width="100" Height="40" Content="COFNIJ" Command="{Binding GoBack}" Grid.Column="0" />
+                <Button Width="100" Height="40" Content="ZAREJESTRUJ" Grid.Column="1" Command="{Binding Register}"/>
+            </Grid>
         </Grid>
-        <StackPanel Orientation="Horizontal" Margin="0,200,0,0">
-            <Button x:Name="Cofnij" Width="100" Height="40" Content="COFNIJ" Margin="60,0,60,0" />
-            <Button Width="100" Height="40" Content="ZAREJESTRUJ" />
-        </StackPanel>
     </Grid>
-</UserControl>
+</Window>
