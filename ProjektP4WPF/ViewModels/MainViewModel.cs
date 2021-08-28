@@ -12,16 +12,12 @@ namespace ProjektP4WPF.ViewModels
 {
     class MainViewModel : BaseViewModel, INotifyPropertyChanged
     {
-
-        #region Private fields
-
-
-
-        #endregion
         #region ICommands
         public ICommand BookFlightCommand { get; private set; }
 
         public ICommand SearchFlightCommand { get; private set; }
+
+        public ICommand RefreshHistoryCommand { get; private set; }
 
         #endregion
 
@@ -99,9 +95,24 @@ namespace ProjektP4WPF.ViewModels
         public FlightViewModel SelectedFlight
         {
             get { return selectedFlight; }
-            set { selectedFlight = value; }
+            set 
+            { 
+                selectedFlight = value;
+                OnPropertyChanged("SelectedFlight");
+            }
         }
 
+        private List<ReservationViewModel> reservation;
+
+        public List<ReservationViewModel> Reservations
+        {
+            get { return reservation; }
+            set 
+            { 
+                reservation = value;
+                OnPropertyChanged("Reservations");
+            }
+        }
 
         #endregion
 
@@ -113,13 +124,20 @@ namespace ProjektP4WPF.ViewModels
             Initiliaze();
             BookFlightCommand = new RelayCommand(x => BookFlight());
             SearchFlightCommand = new RelayCommand(x => SearchFlight());
+            RefreshHistoryCommand = new RelayCommand(x => RefreshHistory());
         }
+
 
 
         #endregion
 
         #region Command actions
 
+
+        private void RefreshHistory()
+        {
+            RefreshBookings();
+        }
 
         private void SearchFlight()
         {
@@ -147,16 +165,20 @@ namespace ProjektP4WPF.ViewModels
                     context.Reservations.Add(
                         new ReservationDataModel()
                         {
-                            ComfortClass = SelectedFlight.Premium ? 1 : 0,
+                            Premium = SelectedFlight.Premium,
                             FlightId = SelectedFlight.FlightId,
                             ReservationDate = DateTime.Now,
                             SeatNumber = new Random().Next(255),
-                            User = UserId
+                            User = UserId,
+                            Name = PassengerName,
+                            Surname = PassengerSurname
                         }
                     );
+
+                    context.SaveChanges();
                 }
             }
-            
+            RefreshBookings();
         }
 
         #endregion
@@ -169,6 +191,17 @@ namespace ProjektP4WPF.ViewModels
             }
 
             DepartureDate = DateTime.Now;
+        }
+
+        private void RefreshBookings()
+        {
+            List<ReservationDataModel> result = new List<ReservationDataModel>();
+            using (var context = new AirportDbContext())
+            {
+                result = context.Reservations.ToList();
+            }
+
+            Reservations = result.Select(x => new ReservationViewModel(x.Id)).ToList();
         }
     }
 }

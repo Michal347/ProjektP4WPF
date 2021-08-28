@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjektP4WPF.ViewModels
 {
-    class FlightViewModel
+    public class FlightViewModel
     {
         public int FlightId { get; private set; }
         public string DepartureCity { get; private set; }

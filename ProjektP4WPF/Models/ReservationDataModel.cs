@@ -15,7 +15,9 @@ namespace ProjektP4WPF.Models
         public int FlightId { get; set; }
         public int SeatNumber { get; set; }
         public DateTime ReservationDate { get; set; }
-        public int ComfortClass { get; set; }
+        public bool Premium { get; set; }
         public int User { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
     }
 }
