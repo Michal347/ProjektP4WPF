@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0246: Nie można znaleźć nazwy typu lub przestrzeni nazw „ProjektWPF” (brak dyrektywy using lub odwołania do zestawu?)
+dotnet_diagnostic.CS0246.severity = none
