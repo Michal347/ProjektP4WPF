@@ -79,45 +79,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Dane_Rezerwacji.cs">
-      <DependentUpon>Lotnisko.tt</DependentUpon>
+    <Compile Include="DAL\AirportDbContext.cs" />
+    <Compile Include="DAL\AirportInitializer.cs" />
+    <Compile Include="Models\CityModel.cs" />
+    <Compile Include="Models\ReservationDataModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\IPopupWindow.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="Views\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Klasy.cs">
-      <DependentUpon>Lotnisko.tt</DependentUpon>
+    <Compile Include="Views\RegisterView.xaml.cs">
+      <DependentUpon>RegisterView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Logowanie.cs">
-      <DependentUpon>Lotnisko.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Lotnisko.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Lotnisko.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Lotnisko.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Lotnisko.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Lotnisko.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Lotnisko.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Lotnisko1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Lotnisko.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Miasta.cs">
-      <DependentUpon>Lotnisko.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Register.xaml.cs">
-      <DependentUpon>Register.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Login.xaml">
+    <Page Include="Resources\ViewViewModelBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -125,15 +108,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MainWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Register.xaml">
+    <Page Include="Views\RegisterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,24 +139,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Lotnisko.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Lotnisko.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Lotnisko.edmx.diagram">
-      <DependentUpon>Lotnisko.edmx</DependentUpon>
-    </None>
-    <None Include="Lotnisko.xsc">
-      <DependentUpon>Lotnisko.xsd</DependentUpon>
-    </None>
-    <None Include="Lotnisko.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Lotnisko1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Lotnisko.xss">
-      <DependentUpon>Lotnisko.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -184,22 +149,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ikonki\Kalendarz2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Lotnisko.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Lotnisko.Context.cs</LastGenOutput>
-      <DependentUpon>Lotnisko.edmx</DependentUpon>
-    </Content>
-    <Content Include="Lotnisko.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Lotnisko.edmx</DependentUpon>
-      <LastGenOutput>Lotnisko.cs</LastGenOutput>
-    </Content>
+    <Resource Include="Icons\Calendar.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
