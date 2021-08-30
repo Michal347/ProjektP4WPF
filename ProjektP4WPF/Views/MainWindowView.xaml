@@ -24,7 +24,7 @@
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
                     <GradientStop Color="#F9F9F9" Offset="0.527"/>
                     <GradientStop Color="#05b4ff"/>
-                    <GradientStop Color="#05ff16" Offset="1"/>
+                    <GradientStop Color="#00FF42" Offset="1"/>
                 </LinearGradientBrush>
             </TabControl.Background>
             <TabItem Header="Zarezerwuj">
