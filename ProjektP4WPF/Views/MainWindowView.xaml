@@ -22,7 +22,7 @@
         <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2,0,3,1" BorderBrush="{x:Null}">
             <TabControl.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
-                    <GradientStop Color="#05b4ff" Offset="0.527"/>
+                    <GradientStop Color="#F9F9F9" Offset="0.527"/>
                     <GradientStop Color="#05b4ff"/>
                     <GradientStop Color="#05ff16" Offset="1"/>
                 </LinearGradientBrush>
@@ -53,7 +53,7 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Content="Zarezerwuj" HorizontalAlignment="Left" Margin="124,415,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.594,1.733" BorderThickness="0.2" Height="25" Grid.Column="3" Command="{Binding BookFlightCommand}">
+                    <Button Content="Zarezerwuj" HorizontalAlignment="Left" Margin="124,415,0,0" VerticalAlignment="Top"  FontFamily="Georgia" Width="125" RenderTransformOrigin="0.594,1.733" BorderThickness="0.2" Height="25" Grid.Column="3" Command="{Binding BookFlightCommand}">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -61,7 +61,7 @@
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
-                    <Button Content="Szukaj" Margin="292,154,0,0" VerticalAlignment="Top" Width="125" BorderThickness="0.2" Height="25" HorizontalAlignment="Left" Command="{Binding SearchFlightCommand}" Grid.Column="3">
+                    <Button Content="Szukaj" Margin="292,154,0,0" VerticalAlignment="Top" Width="125" FontFamily="Georgia" BorderThickness="0.2" Height="25" HorizontalAlignment="Left" Command="{Binding SearchFlightCommand}" Grid.Column="3">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -75,14 +75,12 @@
 
                     <ComboBox x:Name="combo1" HorizontalAlignment="Left" Margin="65,23,0,0" VerticalAlignment="Top" Width="94" SelectedValuePath="Key" DisplayMemberPath="Value" ItemsSource="{Binding Cities}" SelectedValue="{Binding SelectedDepartureCity}" Grid.Column="3"/>
                     <ComboBox x:Name="combo2" HorizontalAlignment="Left" Margin="65,63,0,0" VerticalAlignment="Top" Width="94" Height="22" SelectedValuePath="Key" DisplayMemberPath="Value" ItemsSource="{Binding Cities}" SelectedValue="{Binding SelectedArrivalCity}" Grid.Column="3"/>
-                    <Label Content="Nr. miejsca" HorizontalAlignment="Left" Margin="69,103,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
-                    <xctk:DecimalUpDown Name="numUpDown" DefaultValue="1"  Margin="65,106,320,324" BorderThickness="0" HorizontalContentAlignment="Center" Maximum="10" Minimum="1" Text="1" Grid.Column="3"/>
                     <RadioButton x:Name="rad1" Content="Klasa ekonomiczna" HorizontalAlignment="Left" Margin="230,91,0,0" VerticalAlignment="Top" IsChecked="True" Grid.Column="3"/>
                     <RadioButton IsChecked="{Binding Premium}" x:Name="rad2" Content="Klasa biznesowa" HorizontalAlignment="Left" Margin="366,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.504,-0.049" Grid.Column="3"/>
-                    <Label Content="Imię" HorizontalAlignment="Left" Margin="69,145,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
-                    <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="69,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.201,0.036" Grid.ColumnSpan="4"/>
-                    <TextBox x:Name="Imiebox" HorizontalAlignment="Left" Margin="66,149,0,0" VerticalAlignment="Top" Width="94" Height="22" Text="{Binding PassengerName, Mode=TwoWay}" Grid.Column="3"/>
-                    <TextBox x:Name="nazwiskobox" HorizontalAlignment="Left" Margin="66,190,0,0" VerticalAlignment="Top" Width="94" Height="22" Text="{Binding PassengerSurname, Mode=TwoWay}" Grid.Column="3"/>
+                    <Label Content="Imię" HorizontalAlignment="Left" Margin="69,110,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" RenderTransformOrigin="0.727,-1.423"/>
+                    <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="69,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.201,0.036" Grid.ColumnSpan="4"/>
+                    <TextBox x:Name="Imiebox" HorizontalAlignment="Left" Margin="65,114,0,0" VerticalAlignment="Top" Width="94" Height="22" Text="{Binding PassengerName, Mode=TwoWay}" Grid.Column="3"/>
+                    <TextBox x:Name="nazwiskobox" HorizontalAlignment="Left" Margin="65,158,0,0" VerticalAlignment="Top" Width="94" Height="22" Text="{Binding PassengerSurname, Mode=TwoWay}" Grid.Column="3"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Historia">
@@ -93,26 +91,19 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid>
-                    <ListView x:Name="listView3" Margin="13,15,13,144" ItemsSource="{Binding Reservations}">
+                    <ListView x:Name="listView3" Margin="13,43,13,144" ItemsSource="{Binding Reservations}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Numer siedzenia" Width="40" DisplayMemberBinding="{Binding SeatNumber}"/>
                                 <GridViewColumn Header="Numer lotu" Width="55" DisplayMemberBinding="{Binding FlightId}"/>
                                 <GridViewColumn Header="Odlot z" Width="100" DisplayMemberBinding="{Binding DepartureCity}"/>
+                                <GridViewColumn Header="Nazwisko" Width="100" DisplayMemberBinding="{Binding Surname}"/>
                                 <GridViewColumn Header="Przylot do" Width="100" DisplayMemberBinding="{Binding ArrivalCity}"/>
                                 <GridViewColumn Header="Klasa premium" Width="85" DisplayMemberBinding="{Binding Premium}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button x:Name="bt3" Content="Szukaj" Margin="108,376,397,39" VerticalAlignment="Center" BorderThickness="0.2" Height="32" Command="{Binding RefreshHistoryCommand}">
-                        <Button.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="White" Offset="0"/>
-                                <GradientStop Color="#FFA0D0DC" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
-                    <Button x:Name="bt3_anuluj" Content="Anuluj" Margin="397,376,108,39" VerticalAlignment="Center" BorderThickness="0.2" Height="32">
+                    <Button x:Name="bt3" Content="Odśwież" FontFamily="Georgia" Margin="188,370,174,45" VerticalAlignment="Center" BorderThickness="0.2" Height="32" Command="{Binding RefreshHistoryCommand}">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>

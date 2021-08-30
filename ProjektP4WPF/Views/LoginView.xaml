@@ -114,8 +114,8 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button x:Name="loginbutton" Width="100" Height="40" Content="Zaloguj" Margin="60,0,60,0" Command="{Binding LoginCommand}"/>
-                    <Button x:Name="Registerbutton" Width="100" Height="40" Content="REJESTRACJA" Command="{Binding RegisterCommand}" />
+                    <Button x:Name="loginbutton" Width="100" Height="40" FontFamily="Georgia" Content="Zaloguj" Margin="60,0,60,0" Command="{Binding LoginCommand}"/>
+                    <Button x:Name="Registerbutton" Width="100" Height="40" FontFamily="Georgia"  Content="Rejestracja" Command="{Binding RegisterCommand}" />
                 </StackPanel>
 
             </StackPanel>

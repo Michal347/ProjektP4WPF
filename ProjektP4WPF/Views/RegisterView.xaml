@@ -58,7 +58,7 @@
                         Opacity="0.5"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="0,10,0,10">
-                <TextBlock FontFamily="Helvetica"
+                    <TextBlock FontFamily="Helvetica"
                                 FontWeight="Light"
                                 Text="Password"
                                 FontSize="15"
@@ -86,7 +86,7 @@
                         Height="2"
                         Background="White"
                         Opacity="0.5"/>
-            </StackPanel>
+                </StackPanel>
 
 
                 <StackPanel Orientation="Vertical" Margin="0,10,0,10">
@@ -159,8 +159,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="Cofnij" Width="100" Height="40" Content="COFNIJ" Command="{Binding GoBack}" Grid.Column="0" />
-                <Button Width="100" Height="40" Content="ZAREJESTRUJ" Grid.Column="1" Command="{Binding Register}"/>
+                <Button Height="40" Content="Zarejestruj" FontFamily="Georgia"  Command="{Binding Register}" Grid.ColumnSpan="2" Margin="122,21,123,44"/>
             </Grid>
         </Grid>
     </Grid>

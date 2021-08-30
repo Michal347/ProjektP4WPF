@@ -30,6 +30,7 @@ namespace ProjektP4WPF.ViewModels
                 Premium = flight.Premium;
                 DepartureDate = flight.DepartureDate;
                 ArrivalDate = flight.ArrivalDate;
+                
             }
         }
     }

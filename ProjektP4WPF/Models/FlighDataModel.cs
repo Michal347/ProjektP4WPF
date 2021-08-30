@@ -14,6 +14,7 @@ namespace ProjektP4WPF.Models
         public int DepartureCity { get; set; }
         public int ArrivalCity { get; set; }
         public bool Premium { get; set; }
+
         public DateTime DepartureDate { get; set; }
         public DateTime ArrivalDate { get; set; }
     }
