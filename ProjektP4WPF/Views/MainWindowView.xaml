@@ -44,12 +44,12 @@
                     <ListView x:Name="listView1" Margin="2,235,9,40" SelectionMode="Single" ItemsSource="{Binding AvailableFlights}" SelectedItem="{Binding SelectedFlight}" Grid.ColumnSpan="4">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Numer lotu" Width="55" DisplayMemberBinding="{Binding FlightId}"/>
-                                <GridViewColumn Header="Odlot z" Width="100" DisplayMemberBinding="{Binding DepartureCity}"/>
+                                <GridViewColumn Header="Nr. Lotu" Width="70" DisplayMemberBinding="{Binding FlightId}"/>
+                                <GridViewColumn Header="Odlot z" Width="80" DisplayMemberBinding="{Binding DepartureCity}"/>
                                 <GridViewColumn Header="Przylot do" Width="100" DisplayMemberBinding="{Binding ArrivalCity}"/>
-                                <GridViewColumn Header="Klasa biznesowa" Width="90" DisplayMemberBinding="{Binding Premium}"/>
-                                <GridViewColumn Header="Data odlotu" Width="90" DisplayMemberBinding="{Binding DepartureDate}"/>
-                                <GridViewColumn Header="Data przylotu" Width="90" DisplayMemberBinding="{Binding ArrivalDate}"/>
+                                <GridViewColumn Header="Klasa biznesowa" Width="100" DisplayMemberBinding="{Binding Premium}"/>
+                                <GridViewColumn Header="Data odlotu" Width="110" DisplayMemberBinding="{Binding DepartureDate}"/>
+                                <GridViewColumn Header="Data przylotu" Width="100" DisplayMemberBinding="{Binding ArrivalDate}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -94,8 +94,8 @@
                     <ListView x:Name="listView3" Margin="13,43,13,144" ItemsSource="{Binding Reservations}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Numer siedzenia" Width="40" DisplayMemberBinding="{Binding SeatNumber}"/>
-                                <GridViewColumn Header="Numer lotu" Width="55" DisplayMemberBinding="{Binding FlightId}"/>
+                                <GridViewColumn Header="Nr. Siedzenia" Width="80" DisplayMemberBinding="{Binding SeatNumber}"/>
+                                <GridViewColumn Header="Nr. Lotu" Width="70" DisplayMemberBinding="{Binding FlightId}"/>
                                 <GridViewColumn Header="Odlot z" Width="100" DisplayMemberBinding="{Binding DepartureCity}"/>
                                 <GridViewColumn Header="Nazwisko" Width="100" DisplayMemberBinding="{Binding Surname}"/>
                                 <GridViewColumn Header="Przylot do" Width="100" DisplayMemberBinding="{Binding ArrivalCity}"/>
